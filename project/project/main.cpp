@@ -1,3 +1,7 @@
+#include "WinManager.h"
+#include "ApplicationContext.h"
+#include "Screen.h"
+
 #include <QGuiApplication>
 #include <QWindow>
 #include <QQmlApplicationEngine>
@@ -8,17 +12,10 @@ int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
-    QStack<QQuickView> aa;
+    ApplicationContext::instance()->setContext("winManager", WinManager::instance());
 
-    QQuickView viewer;
-    viewer.setResizeMode(QQuickView::SizeRootObjectToView);
-    viewer.setSource(QUrl("qrc:/main.qml"));
-//    viewer.show();
-
-    QQuickView viewer2;
-    viewer2.setResizeMode(QQuickView::SizeRootObjectToView);
-    viewer2.setSource(QUrl("qrc:/qmlSource/win.qml"));
-    viewer2.hide();
+    WinManager::instance()->addWin("qrc:/qmlSource/win.qml");
+    WinManager::instance()->addWin("qrc:/qmlSource/Help/Help.qml");
 
     return app.exec();
 }

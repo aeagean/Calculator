@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>qmlSource/win.qml</file>
+        <file>qmlSource/Help/Help.qml</file>
     </qresource>
 </RCC>

@@ -3,8 +3,13 @@ TEMPLATE = app
 QT += qml quick
 CONFIG += c++11
 
+INCLUDEPATH += Windows
+
 SOURCES += main.cpp \
-    Windows/winmanager.cpp
+    Windows/WinManager.cpp \
+    Windows/ApplicationContext.cpp \
+    Windows/Screen.cpp \
+    Windows/Win.cpp
 
 RESOURCES += qml.qrc
 
@@ -15,4 +20,7 @@ QML_IMPORT_PATH =
 include(deployment.pri)
 
 HEADERS += \
-    Windows/winmanager.h
+    Windows/WinManager.h \
+    Windows/ApplicationContext.h \
+    Windows/Screen.h \
+    Windows/Win.h
