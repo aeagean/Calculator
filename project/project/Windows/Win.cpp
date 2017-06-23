@@ -4,14 +4,25 @@
 
 using namespace std;
 
-Win::Win(QString name, QQuickView* parent)
-    : QQuickView(parent)
+Win::Win(QString name, QString qmlSource, QQuickView* parent)
+    : QQuickView(parent), m_name(name)
 {
 
-    this->setResizeMode(QQuickView::SizeRootObjectToView);
-    this->setSource(QUrl(name));
+//    this->setFlags(Qt::FramelessWindowHint);
+//    this->setResizeMode(QQuickView::SizeRootObjectToView);
+    this->setSource(QUrl(qmlSource));
     this->show();
     this->setContextProperty();
+}
+
+void Win::setName(QString name)
+{
+    m_name = name;
+}
+
+QString Win::getName()
+{
+    return m_name;
 }
 
 void Win::setContextProperty()

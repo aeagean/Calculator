@@ -7,6 +7,7 @@ Rectangle {
     color: "lightblue"
 
     Text {
+        id: textId
         anchors.centerIn: parent
         text: "ok" + String(Screen.width)
     }
@@ -18,23 +19,31 @@ Rectangle {
 
     Rectangle {
         visible: true
-        y: 250
-        width: 50; height: 50
+        y: 550
+        width: 150; height: 150
         color: "green"
         MouseArea {
             anchors.fill: parent
-            onClicked: winManager.index--
+            onClicked: {
+                textId.text = "-------"
+                winManager.gotoWin = "win"
+                winManager.index--
+            }
         }
     }
 
     Rectangle {
         visible: true
-        x: 50; y: 250
-        width: 50; height: 50
+        x: 550; y: 250
+        width: 150; height: 150
         color: "blue"
         MouseArea {
             anchors.fill: parent
-            onClicked: winManager.index++
+            onClicked: {
+                textId.text = ">>>>"
+                winManager.gotoWin = "helpWin"
+                winManager.index++
+            }
         }
     }
 }
