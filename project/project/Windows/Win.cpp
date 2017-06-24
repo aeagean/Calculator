@@ -11,7 +11,7 @@ Win::Win(QString name, QString qmlSource, QQuickView* parent)
 //    this->setFlags(Qt::FramelessWindowHint);
 //    this->setResizeMode(QQuickView::SizeRootObjectToView);
     this->setSource(QUrl(qmlSource));
-    this->show();
+//    this->show();
     this->setContextProperty();
 }
 

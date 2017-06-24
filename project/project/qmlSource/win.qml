@@ -8,4 +8,9 @@ Rectangle {
     Text {
         text: "win"
     }
+
+    MouseArea {
+        anchors.fill: parent
+        onClicked: winManager.gotoWin = "helpWin"
+    }
 }

@@ -3,7 +3,7 @@ import QtQuick.Window 2.2
 
 Rectangle {
     visible: true
-    width: Screen.width; height: Screen.height
+    width: Screen.width - 500; height: Screen.height - 500
     color: "lightblue"
 
     Text {

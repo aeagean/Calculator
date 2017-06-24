@@ -13,7 +13,7 @@ WinManager::WinManager(QQuickView* parent)
     : Win("mainWin", "qrc:/main.qml", parent), m_quickView(parent)
 {
     m_index = 10;
-
+//    this->setVisible(false);
     connect(ApplicationContext::instance()->getContext<Screen *>("winManager"), SIGNAL(statusChanged()),
             this, SLOT(nex()));
 }
@@ -27,21 +27,18 @@ WinManager *WinManager::instance() {
 
 void WinManager::addWin(QString name, QString qmlSource)
 {
-    QQmlComponent* com = new QQmlComponent(this);
-    com->loadUrl(QUrl(qmlSource));
-    com->create();
-//    Win* win = new Win(name, qmlSource, this);
-//    m_stackWin.append(win);
+    Win* win = new Win(name, qmlSource, m_quickView);
+    m_stackWin.append(win);
 }
 
 void WinManager::showWin(QString name)
 {
     for (int i = 0; i < m_stackWin.count(); i++) {
         if (m_stackWin.at(i)->getName() == name) {
-            m_stackWin.at(i)->show();
+            m_stackWin.at(i)->setVisible(true);
         }
         else {
-            m_stackWin.at(i)->hide();
+            m_stackWin.at(i)->setVisible(false);
         }
     }
 }
