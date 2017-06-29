@@ -28,6 +28,7 @@ WinManager *WinManager::instance() {
 void WinManager::addWin(QString name, QString qmlSource)
 {
     Win* win = new Win(name, qmlSource, m_quickView);
+
     m_stackWin.append(win);
 }
 

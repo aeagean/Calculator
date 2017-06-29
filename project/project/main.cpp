@@ -12,11 +12,14 @@ int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
-    ApplicationContext::instance()->setContext("winManager", new Screen());
+    QQmlApplicationEngine engine;
+    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
-    WinManager::instance()->addWin("mainWin", "qrc:/main.qml");
-    WinManager::instance()->addWin("win", "qrc:/qmlSource/win.qml");
-    WinManager::instance()->addWin("helpWin", "qrc:/qmlSource/Help/Help.qml");
-    WinManager::instance()->showWin("helpWin");
+//    ApplicationContext::instance()->setContext("winManager", new Screen());
+
+//    WinManager::instance()->addWin("mainWin", "qrc:/main.qml");
+//    WinManager::instance()->addWin("win", "qrc:/qmlSource/win.qml");
+//    WinManager::instance()->addWin("helpWin", "qrc:/qmlSource/Help/Help.qml");
+//    WinManager::instance()->showWin("mainWin");
     return app.exec();
 }
