@@ -21,7 +21,11 @@ Window {
         GridView {
             id: gridView
             width: parent.width; height: 0.618*parent.height
-
+            model: 20
+            delegate:
+                Rectangle {
+                width: parent.width/5; height: parent.height/4
+            }
         }
     }
 
