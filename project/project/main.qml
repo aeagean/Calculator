@@ -48,8 +48,8 @@ Window {
                 anchors.right: parent.right;
                 anchors.bottom: parent.bottom;
                 anchors.margins: 8;
-                width: 140;
-                height: 70;
+                width: 240;
+                height: 170;
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
@@ -63,8 +63,8 @@ Window {
                 anchors.right: next.left;
                 anchors.top: next.top;
                 anchors.rightMargin: 8;
-                width: 140;
-                height: 70;
+                width: 240;
+                height: 170;
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
@@ -78,13 +78,12 @@ Window {
                 anchors.right: back.left;
                 anchors.top: next.top;
                 anchors.rightMargin: 8;
-
-                width: 140;
-                height: 70;
+                width: 240;
+                height: 170;
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
-                        if(stack.depth > 0)stack.pop(stack.initialItem);
+                        if(stack.depth > 0) stack.pop(stack.initialItem);
                     }
                 }
             }
@@ -94,13 +93,13 @@ Window {
                 anchors.right: home.left;
                 anchors.top: next.top;
                 anchors.rightMargin: 8;
-                width: 140;
-                height: 70;
+                width: 240;
+                height: 170;
 
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
-                        if(stack.depth > 0)stack.clear();
+                        if(stack.depth > 0) stack.clear();
                     }
                 }
 
