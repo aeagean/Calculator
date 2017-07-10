@@ -13,6 +13,11 @@ Window {
         property var scale: 0.3
     }
 
+    Text {
+        id: displayTextId
+        font.pixelSize: 25
+    }
+
     Rectangle {
         anchors.bottom: parent.bottom
         width: parent.width; height: 0.618*parent.height
@@ -76,6 +81,9 @@ Window {
                             onReleased: {
                                 backgroupRect.color = "#00000000"
                                 textId.opacity = 1
+                            }
+                            onClicked: {
+                                displayTextId.text = displayTextId.text + modelData
                             }
                         }
                     }
