@@ -1,5 +1,6 @@
 import QtQuick 2.5
 import QtQuick.Window 2.2
+import Calculator 1.0
 
 Window {
     width: 1080*priveteValue.scale
@@ -15,7 +16,9 @@ Window {
 
     Text {
         id: displayTextId
-        font.pixelSize: 25
+        font.pixelSize: 100
+        color: "white"
+        text: calculator.text
     }
 
     Rectangle {
@@ -50,7 +53,8 @@ Window {
 
                         Rectangle {
                             anchors.centerIn: parent
-                            width: parent.height; height: parent.height
+                            width: parent.width > parent.height ? parent.height: parent.width;
+                            height: parent.width > parent.height ? parent.height: parent.width;
                             radius: width/2
                             color: getColor(index)
                         }
@@ -58,7 +62,8 @@ Window {
                         Rectangle {
                             id: backgroupRect
                             anchors.centerIn: parent
-                            width: parent.height; height: parent.height
+                            width: parent.width > parent.height ? parent.height: parent.width;
+                            height: parent.width > parent.height ? parent.height: parent.width;
                             radius: width/2
                             color: "#00000000"
                         }
@@ -67,7 +72,7 @@ Window {
                             id: textId
                             text: modelData
                             anchors.centerIn: parent
-                            font.pixelSize: 25
+                            font.pixelSize: (parent.width > parent.height ? parent.height: parent.width)/3;
                             font.bold: true
                             color: "white"
                         }
@@ -83,13 +88,19 @@ Window {
                                 textId.opacity = 1
                             }
                             onClicked: {
-                                displayTextId.text = displayTextId.text + modelData
+                                calculator.index = index
+//                                displayTextId.text = displayTextId.text + modelData
+//                                filterText(displayTextId.text)
                             }
                         }
                     }
                 }
             }
         }
+    }
+
+    Calculator {
+        id: calculator
     }
 
     function getColor(index) {
