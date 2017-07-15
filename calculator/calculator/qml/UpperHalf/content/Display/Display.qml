@@ -16,12 +16,11 @@ Item {
 //        }
 //    }
     Text {
+        id: displayTextId
         anchors.fill: parent
-        text: calculator.text
+        wrapMode: Text.Wrap
         font.pixelSize: parent.height/5
         color: "white"
-        wrapMode: Text.WordWrap
-        elide: Text.ElideLeft
+        text: calculator.text
     }
-
 }
