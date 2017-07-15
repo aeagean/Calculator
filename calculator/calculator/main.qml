@@ -11,8 +11,6 @@ Window {
     color: "#0c1019"
     visible: true
 
-
-
     Column {
         anchors.fill: parent
 
