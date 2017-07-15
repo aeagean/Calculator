@@ -1,4 +1,5 @@
 #include "NumKey.h"
+#include <QDebug>
 
 NumKey::NumKey()
 {
@@ -17,7 +18,16 @@ QString NumKey::getText()
 
 QString NumKey::filterText(QString text)
 {
-    for (int i = text.count() -1; i != 0; i--) {
+    text = this->filterZero(text);
+
+    text = this->filterSurplusZero(text);
+
+    return text;
+}
+
+QString NumKey::filterZero(QString text)
+{
+    for (int i = text.count() -1; i >= 0; i--) {
         if (text.at(i) == QString("÷") ||
                 text.at(i) == QString("×") ||
                 text.at(i) == QString("-") ||
@@ -41,5 +51,26 @@ QString NumKey::filterText(QString text)
             break;
         }
     }
+    return text;
+}
+
+QString NumKey::filterSurplusZero(QString text)
+{
+    if (text == "000") {
+        return text = "00";
+    }
+    else if (text == "00") {
+        return text = "0";
+    }
+
+    if (text.count() >= 2 && text.left(2) != "0.") { //remove twice
+        if (text.at(0) == QString("0")) {
+            text.remove(0, 1);
+        }
+        if (text.at(0) == QString("0")) {
+            text.remove(0, 1);
+        }
+    }
+
     return text;
 }

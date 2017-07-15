@@ -7,8 +7,21 @@ DotKey::DotKey()
 
 void DotKey::setText(QString text)
 {
+    text = this->filterText(text);
+
+    m_text = this->filterSurplusZero(text);
+}
+
+QString DotKey::getText()
+{
+    return m_text;
+}
+
+QString DotKey::filterText(QString text)
+{
+    QString vText = "";
     if (text.isEmpty()) {
-        m_text = "0.";
+        vText = "0.";
     }
     else {
         if (text.at(text.count() -1) == QString("0") ||
@@ -21,7 +34,7 @@ void DotKey::setText(QString text)
             text.at(text.count() -1) == QString("7") ||
             text.at(text.count() -1) == QString("8") ||
             text.at(text.count() -1) == QString("9") ||
-            text.at(text.count() -1) == QString(".")  ) {
+            text.at(text.count() -1) == QString(".")  ) {//indexOf(QRegExp("[0-9]|[.]"))
 
             bool flag = false;
             for (int i = 0; i < text.count(); i++) {
@@ -42,19 +55,25 @@ void DotKey::setText(QString text)
 
             }
             if (flag) {
-                m_text = text + ".";
+                vText = text + ".";
             }
             else {
-                m_text = text;
+                vText = text;
             }
         }
         else {
-            m_text = text + "0.";
+            vText = text + "0.";
         }
     }
+
+    return vText;
 }
 
-QString DotKey::getText()
+QString DotKey::filterSurplusZero(QString text)
 {
-    return m_text;
+    if (text == "00.") {
+        text = "0.";
+    }
+
+    return text;
 }

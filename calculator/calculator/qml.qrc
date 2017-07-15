@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>qml/LowerHalf/LowerHalf.qml</file>
+        <file>qml/UpperHalf/UpperHalf.qml</file>
     </qresource>
 </RCC>

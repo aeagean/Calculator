@@ -15,8 +15,7 @@ void PerKey::setText(QString text)
             text.at(text.count() -1) == QString("×") ||
             text.at(text.count() -1) == QString("-") ||
             text.at(text.count() -1) == QString("+")) {
-//                text.replace(text.count() -1, 1, getKeyValueStr());
-                m_text = text;
+            m_text = text;
         }
         else {
             m_text = text + getKeyValueStr();

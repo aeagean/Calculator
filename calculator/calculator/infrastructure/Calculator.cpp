@@ -1,4 +1,5 @@
 #include "Calculator.h"
+#include <QDebug>
 
 Calculator::Calculator()
 {
@@ -38,5 +39,10 @@ void Calculator::setText()
 {
     m_cInput.setIndex(m_index);
     m_text = m_cInput.getText();
+    QStringList strList = m_cAnalyse.getStrList(m_text);
+    if (m_index == 19) {
+        m_text = m_cHandle.getStrValue(strList);
+        qDebug()<<strList<<"="<<m_text;
+    }
     emit statusChanged();
 }

@@ -22,7 +22,8 @@ SOURCES += main.cpp \
     infrastructure/keys/DotKey.cpp \
     infrastructure/keys/DoubleZero.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += qml.qrc \
+    resources.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -46,3 +47,8 @@ HEADERS += \
     infrastructure/keys/PerKey.h \
     infrastructure/keys/DotKey.h \
     infrastructure/keys/DoubleZero.h
+
+DISTFILES += \
+    android-sources/AndroidManifest.xml
+
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android-sources

@@ -7,11 +7,13 @@ DoubleZero::DoubleZero()
 
 void DoubleZero::setText(QString text)
 {
-    if (text.isEmpty()) {
-        m_text = "00";
+    m_text = text + getKeyValueStr();
+
+    if (m_text == "000") {
+        m_text = "0";
     }
-    else {
-        m_text = text + "00";
+    else if (m_text == "0000"){
+        m_text = "00";
     }
 }
 

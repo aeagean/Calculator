@@ -14,6 +14,8 @@ public:
 
 private:
     QString filterText(QString text);
+    QString filterZero(QString text);
+    QString filterSurplusZero(QString text);
 
 private:
     QString m_keyValueStr;
