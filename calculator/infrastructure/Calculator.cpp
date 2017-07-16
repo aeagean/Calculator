@@ -30,6 +30,17 @@ void Calculator::setValue(QString value)
 
 }
 
+QStringList Calculator::getTextList()
+{
+    return m_textList;
+}
+
+void Calculator::setTextList(QString addText)
+{
+    m_textList.insert(0, addText);
+    emit statusChanged();
+}
+
 QString Calculator::getText()
 {
     return m_text;
@@ -42,6 +53,7 @@ void Calculator::setText()
     QStringList strList = m_cAnalyse.getStrList(m_text);
     if (m_index == 19) {
         m_text = m_cHandle.getStrValue(strList);
+        this->setTextList(m_cInput.getText());
         qDebug()<<strList<<"="<<m_text;
     }
     emit statusChanged();

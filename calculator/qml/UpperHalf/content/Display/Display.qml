@@ -23,4 +23,20 @@ Item {
         color: "white"
         text: calculator.text
     }
+
+    ListView {
+        id: listview
+        anchors.fill: parent
+        verticalLayoutDirection: ListView.BottomToTop
+        model: calculator.textList
+        delegate: Item {
+            width: listview.width; height: listview.height/3
+
+            Text {
+                text: modelData
+                font.pixelSize: (parent.width > parent.height ? parent.height : parent.width)/3
+                color: "white"
+            }
+        }
+    }
 }

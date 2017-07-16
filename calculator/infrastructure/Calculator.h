@@ -15,6 +15,7 @@ public:
     Q_PROPERTY(int index READ getIndex WRITE setIndex NOTIFY indexChanged)
     Q_PROPERTY(QString text READ getText NOTIFY statusChanged)
     Q_PROPERTY(QString value READ getValue NOTIFY valueChanged)
+    Q_PROPERTY(QStringList textList READ getTextList /*WRITE setTextList */NOTIFY statusChanged)
 
     int getIndex();
     void setIndex(int index);
@@ -23,6 +24,9 @@ public:
 
     QString getValue();
     void setValue(QString value);
+
+    QStringList getTextList();
+    void setTextList(QString addText);
 
 signals:
     void indexChanged();
@@ -36,6 +40,7 @@ private:
     int m_index;
     QString m_text;
     QString m_value;
+    QStringList m_textList;
     CInput m_cInput;
     CAnalyse m_cAnalyse;
     CHandle m_cHandle;

@@ -60,54 +60,6 @@ void CInput::setIndex(int index)
         m_numKey.setText(m_text);
         m_text = m_numKey.getText();
     }
-
-//    if (m_index == 0) {
-//        m_text = "";
-//    }
-//    else if (m_index == 1) {
-//        m_text.chop(1);
-//    }
-//    else if (!m_text.isEmpty() && (m_index == 2 || m_index == 3 || m_index == 7 ||
-//                                   m_index == 11 || m_index == 15 ||m_index == 19)) {
-//        if ( m_text.at(m_text.count()-1) == indexStr[2] ||
-//             m_text.at(m_text.count()-1) == indexStr[3] ||
-//             m_text.at(m_text.count()-1) == indexStr[7] ||
-//             m_text.at(m_text.count()-1) == indexStr[11] ||
-//             m_text.at(m_text.count()-1) == indexStr[15] ||
-//             m_text.at(m_text.count()-1) == indexStr[19]) {
-//            m_text.replace(m_text.count() - 1, 1, indexStr[m_index]);
-//        }
-//        else {
-//            m_text += indexStr[m_index];
-//        }
-//    }
-//    else if (m_index == 4 || m_index == 5 || m_index == 6 ||
-//             m_index == 8 || m_index == 9 || m_index == 10 ||
-//             m_index == 12 || m_index == 13 || m_index == 14 ||
-//             m_index == 16 || m_index == 11) {
-//        m_text += indexStr[m_index];
-//    }
-//    else if (m_index == 18) {
-//        if (m_text.isEmpty()) {
-//            m_text += (indexStr[m_index-1] + indexStr[m_index]);
-//        }
-//        else {
-//            if (m_text.at(m_text.count()-1) != indexStr[4] ||
-//                 m_text.at(m_text.count()-1) != indexStr[5] ||
-//                    m_text.at(m_text.count()-1) != indexStr[6] ||
-//                    m_text.at(m_text.count()-1) != indexStr[8] ||
-//                    m_text.at(m_text.count()-1) != indexStr[9] ||
-//                    m_text.at(m_text.count()-1) != indexStr[10] ||
-//                    m_text.at(m_text.count()-1) != indexStr[12] ||
-//                    m_text.at(m_text.count()-1) != indexStr[5] ||
-//                    m_text.at(m_text.count()-1) != indexStr[5] ||
-//                    m_text.at(m_text.count()-1) != indexStr[5] ||
-//                    m_text.at(m_text.count()-1) != indexStr[5] ) {
-//                if (m_text.at(m_text.count()-1) != indexStr[m_index-1])
-//                m_text += (indexStr[m_index-1] + indexStr[m_index]);
-//            }
-//        }
-//    }
 }
 
 QString CInput::getText()
