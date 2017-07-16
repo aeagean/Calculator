@@ -62,7 +62,26 @@ void CInput::setIndex(int index)
     }
 }
 
+void CInput::setText(QString text)
+{
+    m_text = text;
+}
+
 QString CInput::getText()
 {
-    return m_text;
+    return this->filterText(m_text);
+}
+
+QString CInput::filterText(QString text)
+{
+    return text;
+//    QString str = text.right(1);
+//    int index = str.indexOf(QRegExp("[+]|[-]|[÷]|[×]"));
+
+//    if (index != -1) {
+//        return text.left(text.count() - 1);
+//    }
+//    else {
+//        return text;
+//    }
 }

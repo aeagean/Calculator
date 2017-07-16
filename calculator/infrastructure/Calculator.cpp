@@ -35,9 +35,9 @@ QStringList Calculator::getTextList()
     return m_textList;
 }
 
-void Calculator::setTextList(QString addText)
+void Calculator::setTextList(QStringList strList)
 {
-    m_textList.insert(0, addText);
+    m_textList = strList;
     emit statusChanged();
 }
 
@@ -53,8 +53,22 @@ void Calculator::setText()
     QStringList strList = m_cAnalyse.getStrList(m_text);
     if (m_index == 19) {
         m_text = m_cHandle.getStrValue(strList);
-        this->setTextList(m_cInput.getText());
+        QStringList textlist = this->getTextList();
+        textlist.insert(0, m_text);
+        this->setTextList(textlist);
+        m_cInput.setText(m_text);
         qDebug()<<strList<<"="<<m_text;
+    }
+    else {
+        QStringList textlist = this->getTextList();
+        if (textlist.count()) {
+            textlist.removeAt(0);
+            textlist.insert(0, m_text);
+            this->setTextList(textlist);
+        }
+        else {
+           this->setTextList(strList);
+        }
     }
     emit statusChanged();
 }

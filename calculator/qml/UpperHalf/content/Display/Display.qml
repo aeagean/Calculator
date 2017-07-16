@@ -15,14 +15,14 @@ Item {
 //            font.pixelSize: 30
 //        }
 //    }
-    Text {
-        id: displayTextId
-        anchors.fill: parent
-        wrapMode: Text.Wrap
-        font.pixelSize: parent.height/5
-        color: "white"
-        text: calculator.text
-    }
+//    Text {
+//        id: displayTextId
+//        anchors.fill: parent
+//        wrapMode: Text.Wrap
+//        font.pixelSize: parent.height/5
+//        color: "white"
+//        text: calculator.text
+//    }
 
     ListView {
         id: listview

@@ -23,7 +23,7 @@ void CAnalyse::filterStr(QString str)
     m_strList.clear();
     int i = 0;
 //    str = "-111%+22%"; //test
-    while ((i = str.indexOf(QRegExp("[+]|[-]|[÷×]"))) != -1) {
+    while ((i = str.indexOf(QRegExp("[+]|[-]|[÷]|[×]"))) != -1) {
         QString lstr = str.left(i+1);
         str = str.right(str.count() - i-1);
         if (!lstr.left(i).isEmpty())

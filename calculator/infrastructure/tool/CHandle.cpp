@@ -13,16 +13,20 @@ QString CHandle::getStrValue(QStringList strList)
         double value = strList.at(0).toDouble();
         for (int i = 1; i < strList.count(); i+=2) {
             if (strList.at(i) == "+") {
-                value += strList.at(i+1).toDouble();
+                if ((i+1) <= strList.count())
+                    value += strList.at(i+1).toDouble();
             }
             else if (strList.at(i) == "-") {
-                value -= strList.at(i+1).toDouble();
+                if ((i+1) <= strList.count())
+                    value -= strList.at(i+1).toDouble();
             }
             else if (strList.at(i) == "÷") {
-                value /= strList.at(i+1).toDouble();
+                if ((i+1) <= strList.count())
+                    value /= strList.at(i+1).toDouble();
             }
             else if (strList.at(i) == "×") {
-                value *= strList.at(i+1).toDouble();
+                if ((i+1) <= strList.count())
+                    value *= strList.at(i+1).toDouble();
             }
         }
 

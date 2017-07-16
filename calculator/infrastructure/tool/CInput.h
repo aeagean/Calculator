@@ -27,7 +27,11 @@ public:
     CInput();
 
     void setIndex(int index);
+    void setText(QString text);
     QString getText();
+
+private:
+    QString filterText(QString text);
 
 private:
     int m_index;

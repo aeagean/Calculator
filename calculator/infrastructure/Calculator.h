@@ -4,7 +4,7 @@
 #include "CInput.h"
 #include "CAnalyse.h"
 #include "CHandle.h"
-#include <QString>
+#include <QStringList>
 #include <QObject>
 
 class Calculator : public QObject
@@ -26,7 +26,7 @@ public:
     void setValue(QString value);
 
     QStringList getTextList();
-    void setTextList(QString addText);
+    void setTextList(QStringList strList);
 
 signals:
     void indexChanged();
