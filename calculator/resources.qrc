@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/icon/calculator_640px_1180874_easyicon.net.png</file>
+        <file>resources/icon/Info_1300px_1180699_easyicon.net.png</file>
+    </qresource>
+</RCC>
