@@ -29,13 +29,30 @@ Item {
         anchors.fill: parent
         verticalLayoutDirection: ListView.BottomToTop
         model: calculator.textList
+        clip: true
         delegate: Item {
-            width: listview.width; height: listview.height/3
+            id: itemId
+            width: listview.width; height: index === 0 ? listview.height/3 : listview.height/3
+//            color: index === 0?"lightblue":"red"
 
             Text {
+                id: textId
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
                 text: modelData
-                font.pixelSize: (parent.width > parent.height ? parent.height : parent.width)/3
+                font.pixelSize: index === 0 ? (parent.width > parent.height ? parent.height : parent.width)/1.3:(parent.width > parent.height ? parent.height : parent.width)/2.5
                 color: "white"
+
+                onTextChanged: console.log(textId.text.length*font.pixelSize, "width")
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                drag.axis: Drag.XAxis
+                drag.target: itemId
+                drag.minimumX: 0
+                drag.maximumX: parent.width
+
             }
         }
     }
