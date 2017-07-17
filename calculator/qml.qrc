@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qml/LowerHalf/LowerHalf.qml</file>
+        <file>qml/UpperHalf/UpperHalf.qml</file>
+        <file>qml/UpperHalf/content/TopTitle/TopTitle.qml</file>
+        <file>qml/UpperHalf/content/Display/Display.qml</file>
+    </qresource>
+</RCC>
