@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>Windows/winmanager.cpp</file>
-        <file>Windows/winmanager.h</file>
-    </qresource>
-</RCC>
