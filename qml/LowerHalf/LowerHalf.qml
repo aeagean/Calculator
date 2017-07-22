@@ -4,7 +4,6 @@ import Calculator 1.0
 
 Rectangle {
     property variant model
-//    anchors.bottom: parent.bottom
     width: parent.width; height: 0.618*parent.height
     color: "#0d141c"
 

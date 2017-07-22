@@ -7,7 +7,6 @@ import "./content/Display"
 Item {
     property variant model
     width: parent.width; height: (1-0.618)*parent.height
-//    color: "lightblue"
 
     Column {
         anchors.fill: parent
