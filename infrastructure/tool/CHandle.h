@@ -10,6 +10,10 @@ public:
 
     QString getStrValue(QStringList strList);
 
+
+private:
+    QStringList mulAndDivOperation(QStringList strList);
+
 private:
     QString m_value;
 };
