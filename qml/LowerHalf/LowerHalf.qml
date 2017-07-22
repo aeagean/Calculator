@@ -62,7 +62,7 @@ Rectangle {
                         anchors.fill: parent
                         onPressed: {
                             backgroupRect.color = getColorBackgroup(index)
-                            textId.opacity = 0.8
+                            textId.opacity = 0.5
                         }
                         onReleased: {
                             backgroupRect.color = "#00000000"
