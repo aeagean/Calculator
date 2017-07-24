@@ -53,7 +53,7 @@ QStringList CHandle::mulAndDivOperation(QStringList strList)
         else {
             value = leftValue / rightValue;
         }
-        strList.replace(index, QString::number(value));
+        strList.replace(index, QString::number(value, 'g', 16));
         strList.removeAt(index-1);
         strList.removeAt(index);
     }
