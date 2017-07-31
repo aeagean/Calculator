@@ -31,7 +31,7 @@ QString CHandle::getStrValue(QStringList strList)
             }
         }
 
-        return QString::number(value, 'g', 15);
+        return QString::number(value, 'g', 10);
     }
     return "";
 }
@@ -53,7 +53,7 @@ QStringList CHandle::mulAndDivOperation(QStringList strList)
         else {
             value = leftValue / rightValue;
         }
-        strList.replace(index, QString::number(value, 'g', 15));
+        strList.replace(index, QString::number(value, 'g', 10));
         strList.removeAt(index-1);
         strList.removeAt(index);
     }
